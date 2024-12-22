@@ -19,4 +19,5 @@ function loadComponent(componentName, targetId) {
 // Load components when page loads
 document.addEventListener('DOMContentLoaded', function() {
     loadComponent('section1', 'section1');
+    loadComponent('section2', 'section2');
 });
