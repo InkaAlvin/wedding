@@ -5,122 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Aurelia&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 	<style>
-        .slideshow-container {
-            position: relative;
-            margin: auto;
-            overflow: hidden;
-            height: 100vh; /* Fixed height to prevent layout shifts */
-        }
-        .slide {
-            position: absolute; /* Position absolute for smooth transitions */
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            visibility: hidden; /* Use visibility instead of display for smoother transitions */
-            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-        }
-        .slide img {
-            height: 100%;
-            object-fit: cover;
-            width: 100%;
-        }
-        .slide.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .controls {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 4px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth dot color transition */
-        }
-        .dot.active {
-            background-color: #717171;
-        }
 
-		@font-face {
-			font-family: "Aurelia";
-			src: url("fonts/Aurelia regular.ttf") format("woff2");
-		}
-
-		@font-face {
-			font-family: "Cormorant";
-			src: url("fonts/Cormorant.ttf");
-		}
-
-		@font-face {
-			font-family: "AbyssinicaSIL";
-			src: url("fonts/AbyssinicaSIL-Regular.ttf");
-		}
-
-		
-
-		.elementor-heading-title {
-			font-size: 24px;
-			letter-spacing: 5.4px;
-			font-family: "Aurelia", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-			color: #FFFFFF;
-		}
-
-		
-		.elementor-heading-description {
-			font-size: 14px;
-			font-family: "Cormorant", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-			color: #FFFFFF;
-		}
-
-		section {
-			position: relative;
-		}
-
-		.heading-detail {
-			position: absolute;
-			bottom: 10px;
-			padding: 20px;
-		}
-
-		.countdown-container {
-			width: 100%;
-        }
-
-        .countdown {
-            display: flex;
-			text-align: center;
-            justify-content: center;
-            gap: 3rem;
-			font-family: "AbyssinicaSIL", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        .countdown-item {
-            min-width: 20px;
-        }
-
-        .number {
-            font-weight: bold;
-            color: white;
-            font-size: 17px;
-        }
-
-        .label {
-            font-size: 9px;
-			line-height: 3.3em;
-			letter-spacing:2.4px;
-            color: white;	
-            text-transform: uppercase;
-        }
     </style>
 </head>
 <body>
@@ -134,14 +21,14 @@
 			</div>
 		</div>
 		<div class="heading-detail">
-			<div class="elementor-heading-title">Shella & Indra</div>
+			<div class="elementor-heading-title">Inka & Alvin</div>
 			<div class="elementor-heading-description pt-3">
 				“I am who I am because of you. You are every reason, every hope, and every dream I’ve ever had.”
 				<br>
 				<br>
 				- Bambang pamungkas
 			</div>
-			<div class="countdown-container pt-2">
+			<div class="countdown-container pt-4">
 				<div class="countdown">
 					<div class="countdown-item">
 						<div class="number" id="days">00</div>
@@ -167,6 +54,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+	
+	
 	<script>
 		 $(document).ready(function() {
             // Set your wedding date here (format: YYYY-MM-DD HH:MM:SS)
@@ -196,8 +85,7 @@
             updateCountdown();
             const timer = setInterval(updateCountdown, 1000);
         });
-	</script>
-    <!-- <script>
+
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
@@ -230,6 +118,6 @@
             clearInterval(slideTimer);
             slideTimer = setInterval(nextSlide, interval);
         }
-    </script> -->
+    </script>
 </body>
 </html>
