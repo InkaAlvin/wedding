@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+		.slide img {
+			height: 100vh;
+			object-fit: cover;
+			width: 100%;
+		}
+
+        .slide.active {
+            display: block;
+            animation: fade 1s ease;
+        }
+        @keyframes fade {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+	<div class="slideshow-container">
+		<div class="slide active">
+			<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Slide 1" class="img-fluid">
+		</div>
+		<div class="slide">
+			<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-19.jpg" alt="Slide 2" class="img-fluid">
+		</div>
+		<div class="slide">
+			<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Slide 3" class="img-fluid">
+		</div>
+	</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const interval = 3000; // Change slide every 3 seconds
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slideIndex = n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+
+        function currentSlide(n) {
+            showSlide(n);
+            resetTimer();
+        }
+
+        function nextSlide() {
+            showSlide(slideIndex + 1);
+        }
+
+        let slideTimer = setInterval(nextSlide, interval);
+
+        function resetTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(nextSlide, interval);
+        }
+    </script>
+</body>
+</html>
