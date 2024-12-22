@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Aurelia&display=swap" rel="stylesheet">
 	<style>
         .slideshow-container {
             position: relative;
@@ -49,21 +50,154 @@
         .dot.active {
             background-color: #717171;
         }
+
+		@font-face {
+			font-family: "Aurelia";
+			src: url("fonts/Aurelia regular.ttf") format("woff2");
+		}
+
+		@font-face {
+			font-family: "Cormorant";
+			src: url("fonts/Cormorant.ttf");
+		}
+
+		@font-face {
+			font-family: "AbyssinicaSIL";
+			src: url("fonts/AbyssinicaSIL-Regular.ttf");
+		}
+
+		
+
+		.elementor-heading-title {
+			font-size: 24px;
+			letter-spacing: 5.4px;
+			font-family: "Aurelia", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+			color: #FFFFFF;
+		}
+
+		
+		.elementor-heading-description {
+			font-size: 14px;
+			font-family: "Cormorant", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+			color: #FFFFFF;
+		}
+
+		section {
+			position: relative;
+		}
+
+		.heading-detail {
+			position: absolute;
+			bottom: 10px;
+			padding: 20px;
+		}
+
+		.countdown-container {
+			width: 100%;
+        }
+
+        .countdown {
+            display: flex;
+			text-align: center;
+            justify-content: center;
+            gap: 3rem;
+			font-family: "AbyssinicaSIL", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .countdown-item {
+            min-width: 20px;
+        }
+
+        .number {
+            font-weight: bold;
+            color: white;
+            font-size: 17px;
+        }
+
+        .label {
+            font-size: 9px;
+			line-height: 3.3em;
+			letter-spacing:2.4px;
+            color: white;	
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
-	<div class="slideshow-container">
-		<div class="slide active">
-			<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Slide 1" class="img-fluid">
+	<section>
+		<div class="slideshow-container">
+			<div class="slide ">
+				<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Slide 1" class="img-fluid">
+			</div>
+			<div class="slide active">
+				<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-19.jpg" alt="Slide 2" class="img-fluid">
+			</div>
 		</div>
-		<div class="slide">
-			<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-19.jpg" alt="Slide 2" class="img-fluid">
+		<div class="heading-detail">
+			<div class="elementor-heading-title">Shella & Indra</div>
+			<div class="elementor-heading-description pt-3">
+				“I am who I am because of you. You are every reason, every hope, and every dream I’ve ever had.”
+				<br>
+				<br>
+				- Bambang pamungkas
+			</div>
+			<div class="countdown-container pt-2">
+				<div class="countdown">
+					<div class="countdown-item">
+						<div class="number" id="days">00</div>
+						<div class="label">Days</div>
+					</div>
+					<div class="countdown-item">
+						<div class="number" id="hours">00</div>
+						<div class="label">Hours</div>
+					</div>
+					<div class="countdown-item">
+						<div class="number" id="minutes">00</div>
+						<div class="label">Minutes</div>
+					</div>
+					<div class="countdown-item">
+						<div class="number" id="seconds">00</div>
+						<div class="label">Seconds</div>
+					</div>
+				</div>
+			</div>
+		
 		</div>
-	</div>
+	</section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script>
+	<script>
+		 $(document).ready(function() {
+            // Set your wedding date here (format: YYYY-MM-DD HH:MM:SS)
+            const weddingDate = new Date('2025-01-01 12:00:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                $('#days').text(String(days).padStart(2, '0'));
+                $('#hours').text(String(hours).padStart(2, '0'));
+                $('#minutes').text(String(minutes).padStart(2, '0'));
+                $('#seconds').text(String(seconds).padStart(2, '0'));
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    $('.countdown').html('<h2>The Wedding Day Has Arrived!</h2>');
+                }
+            }
+
+            // Update countdown every second
+            updateCountdown();
+            const timer = setInterval(updateCountdown, 1000);
+        });
+	</script>
+    <!-- <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
@@ -96,6 +230,6 @@
             clearInterval(slideTimer);
             slideTimer = setInterval(nextSlide, interval);
         }
-    </script>
+    </script> -->
 </body>
 </html>
