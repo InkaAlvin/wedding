@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+	<style>
         .slideshow-container {
             position: relative;
             margin: auto;
             overflow: hidden;
+            height: 100vh; /* Fixed height to prevent layout shifts */
         }
         .slide {
-            display: none;
+            position: absolute; /* Position absolute for smooth transitions */
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden; /* Use visibility instead of display for smoother transitions */
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+        }
+        .slide img {
+            height: 100%;
+            object-fit: cover;
             width: 100%;
         }
-		.slide img {
-			height: 100vh;
-			object-fit: cover;
-			width: 100%;
-		}
-
         .slide.active {
-            display: block;
-            animation: fade 1s ease;
-        }
-        @keyframes fade {
-            from {opacity: 0.4}
-            to {opacity: 1}
+            opacity: 1;
+            visibility: visible;
         }
         .controls {
             position: absolute;
@@ -44,6 +44,7 @@
             border-radius: 50%;
             display: inline-block;
             cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth dot color transition */
         }
         .dot.active {
             background-color: #717171;
@@ -57,9 +58,6 @@
 		</div>
 		<div class="slide">
 			<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-19.jpg" alt="Slide 2" class="img-fluid">
-		</div>
-		<div class="slide">
-			<img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Slide 3" class="img-fluid">
 		</div>
 	</div>
 
