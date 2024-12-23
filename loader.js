@@ -20,4 +20,8 @@ function loadComponent(componentName, targetId) {
 document.addEventListener('DOMContentLoaded', function() {
     loadComponent('section1', 'section1');
     loadComponent('section2', 'section2');
+    loadComponent('section3', 'section3');
+    loadComponent('section4', 'section4');
+    loadComponent('section5', 'section5');
+    loadComponent('section6', 'section6');
 });
