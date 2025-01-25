@@ -58,12 +58,16 @@
                 <!-- Gallery items -->
                 <div class="custom-col-4">
                     <div class="gallery-item">
-                        <img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Gallery Image 1" class="gallery-image">
+                        <a href="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" class="js-smartPhoto" data-caption="Caption 1" data-id="id-1">
+                            <img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Gallery Image 1" class="gallery-image">
+                        </a>
                     </div>
                 </div>
                 <div class="custom-col-4">
                     <div class="gallery-item">
-                        <img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Gallery Image 2" class="gallery-image">
+                        <a href="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" class="js-smartPhoto" data-caption="Caption 3" data-id="id-2">
+                            <img src="https://web.ts-invitation.com/wp-content/uploads/2023/10/shella-indra-7-1.jpg" alt="Gallery Image 1" class="gallery-image">
+                        </a>
                     </div>
                 </div>
                 <div class="custom-col-4">
@@ -121,3 +125,8 @@
     </div>
 
 </section>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  new SmartPhoto(".js-smartphoto");
+});
+</script>
