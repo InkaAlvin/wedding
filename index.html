@@ -9,9 +9,69 @@
     <link href="style.css" rel="stylesheet">
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<style>
+.wedding-container {
+            opacity: 1;
+            transition: opacity 1s ease-out;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+			url('photos/Photo-1.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
 
+        .wedding-couple-names {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .wedding-recipient-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .wedding-guest-name {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .wedding-open-button {
+            border: 2px solid white;
+            padding: 10px 30px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+            background: transparent;
+            cursor: pointer;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .wedding-open-button:hover {
+            background: white;
+            color: black;
+        }
+		</style>
 </head>
-<body>
+<body>  
+	<div class="wedding-container">
+        <div class="wedding-couple-names">Alvin & Inka</div>
+        <div class="wedding-recipient-title">Kepada Yth.</div>
+        <div class="wedding-guest-name">Jokowi</div>
+        <button class="wedding-open-button" onclick="openInvitation()">Buka Undangan</button>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<div id="section1"></div>
 	<div id="section2"></div>
@@ -34,19 +94,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 	<script>
-        let hasPlayed = false;
-        window.onscroll = function() {
-            if (!hasPlayed) {
+		 function openInvitation() {
+            document.querySelector('.wedding-container').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.wedding-container').style.display = 'none';
                 const audio = document.getElementById('bgMusic');
                 audio.play()
-                    .then(() => {
-                        hasPlayed = true;
-                    })
-                    .catch(error => {
-                        console.log("Play failed:", error);
-                    });
-            }
-        };
+            }, 1000);
+        }
+
 		$(document).ready(function() {
 			window.createCalendarEvent = function() {
 				const event = {
