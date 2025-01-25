@@ -24,4 +24,5 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('section4', 'section4');
     loadComponent('section5', 'section5');
     loadComponent('section6', 'section6');
+    loadComponent('section7', 'section7');
 });

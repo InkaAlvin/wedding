@@ -1,30 +1,91 @@
-<style>
-    .section6 {
-        color:white;
-    }
 
-    .thank-you {
-        padding: 20px;
-        text-align: center;
-    }
+    <style>
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .invitation-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .save-date {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-calendar {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 0.5rem 2rem;
+            margin: 1rem 0;
+            transition: all 0.3s;
+        }
+        
+        .btn-calendar:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .event-section {
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .event-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .event-details {
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .maps-link {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        
+        .maps-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: #fff;
+        }
 
-    .thank-you .title {
-        font-family: "Roboto", Sans-serif; 
-        font-size: 30px;
-        font-weight: bold;
-        color:white;
-    }
-</style>
+        .section6 {
+            background-color: black !important;
+        }
+    </style>
 <section class="section6 mt-4" style="height: 100%;">
-    <div class="thank-you">
-        <div class="title">
-            Terimakasih ada 
-        </div>
-        <div class="text-description">
-            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami. Atas kehadiran dan doa restunya, kami sampaikan terima kasih.
-        </div>
-        <div class="elementor-heading-title mt-5">
-            Alvin & Inka
+    <div class="invitation-container">
+        <div class="save-date">Save the Date</div>
+        
+        <button class="btn btn-calendar">SAVE TO CALENDAR</button>
+        
+        <div class="event-section">
+            <div class="event-title">WEDDING RECEPTION</div>
+            <div class="event-details">
+                SABTU, 23 MEI 2023<br>
+                Pukul 16.00 WIB - Selesai<br>
+                Bertempat di<br>
+                The Royal Krakatau Hotel<br>
+                Jl. Raya Lorem Ipsum
+            </div>
+            <a href="#" class="maps-link">GOOGLE MAPS</a>
         </div>
     </div>
 </section>
