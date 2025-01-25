@@ -94,6 +94,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 	<script>
+		// Get guest name from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestName = urlParams.get('to') || 'Tamu';
+        document.querySelector('.wedding-guest-name').textContent = guestName;
+
+		 // Ensure page starts at top
+		 window.onload = function() {
+            window.scrollTo(0, 0);
+        }
+
 		 function openInvitation() {
             document.querySelector('.wedding-container').style.opacity = '0';
             setTimeout(() => {
