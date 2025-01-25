@@ -3,7 +3,11 @@ $(document).ready(function() {
     const interval = 3000; // Change slide every 3 seconds
 
     // Set your wedding date here (format: YYYY-MM-DD HH:MM:SS)
-    const weddingDate = new Date('2025-01-01 12:00:00').getTime();
+    const weddingDate = new Date('2025-02-01 12:00:00').getTime();
+
+    // Update countdown every second
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -25,15 +29,11 @@ $(document).ready(function() {
         }
     }
 
-    // Update countdown every second
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
 
 
     function showSlide(n) {
-        const slides = document.querySelectorAll('.slide');
+        const slides = document.querySelector('#home').querySelectorAll('.slide');
         slides.forEach(slide => slide.classList.remove('active'));
-        
         slideIndex = n;
         if (slideIndex >= slides.length) slideIndex = 0;
         if (slideIndex < 0) slideIndex = slides.length - 1;
