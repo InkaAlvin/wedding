@@ -80,6 +80,7 @@ section {
 }
 
 .heading-detail {
+    width: 100%;
     position: absolute;
     bottom: 0px;
     padding: 20px;

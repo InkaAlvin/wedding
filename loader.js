@@ -19,10 +19,10 @@ function loadComponent(componentName, targetId) {
 // Load components when page loads
 document.addEventListener('DOMContentLoaded', function() {
     loadComponent('section1', 'section1');
-    loadComponent('section2', 'section2');
     loadComponent('section3', 'section3');
     loadComponent('section4', 'section4');
     loadComponent('section5', 'section5');
     loadComponent('section6', 'section6');
     loadComponent('section7', 'section7');
+    loadComponent('section8', 'section8');
 });
