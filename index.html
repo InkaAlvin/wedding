@@ -49,6 +49,33 @@
                     });
             }
         };
-    </script>
+		$(document).ready(function() {
+			window.createCalendarEvent = function() {
+			const event = {
+						title: "Wedding Alvin & Inka",
+						start: "20250201T140000",
+						end: "20250201T193000",
+						description: ""
+			};
+
+			const ics = `BEGIN:VCALENDAR
+			VERSION:2.0
+			BEGIN:VEVENT
+			SUMMARY:${event.title}
+			DTSTART:${event.start}
+			DTEND:${event.end}
+			DESCRIPTION:${event.description}
+			END:VEVENT
+			END:VCALENDAR`;
+
+			const blob = new Blob([ics], { type: 'text/calendar' });
+			const url = window.URL.createObjectURL(blob);
+			$('<a>', {
+				href: url,
+				download: 'wedding.ics'
+			})[0].click();
+			};
+		});
+	</script>
 </body>
 </html>
