@@ -1,6 +1,12 @@
 html body {
     background-color: #1e1e1e;
 }
+
+body {
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 .slideshow-container {
     position: relative;
     margin: auto;
@@ -122,6 +128,13 @@ section {
     opacity: 1;
     transition: opacity 1s ease-out;
     height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999; /* Add high z-index to appear on top */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url('photos/Photo-1.jpg') center/cover;
     display: flex;

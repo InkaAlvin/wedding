@@ -17,17 +17,18 @@
 			min-height: 100vh;
 			display: flex;
 			flex-direction: column;
+			overflow: hidden; /* Contain the animations */
 		}
 
 		.moving-text {
 			opacity: 0;
 		}
 
-		/* Only define the initial animation states */
-		.from-left { transform: translateX(-100px); }
-		.from-right { transform: translateX(100px); }
-		.from-top { transform: translateY(-100px); }
-		.from-bottom { transform: translateY(100px); }
+	/* Animation starting positions */
+	.from-left { transform: translateX(-100px); }
+	.from-right { transform: translateX(100px); }
+	.from-top { transform: translateY(-50px); }
+	.from-bottom { transform: translateY(50px); }
 
 		/* Animation */
 		.moving-text {
@@ -40,7 +41,7 @@
 		}
 		</style>
 </head>
-<body style="overflow-x: hidden;">  
+<body >  
 	<div class="wedding-container">
         <div class="wedding-couple-names">Alvin & Inka</div>
         <div class="wedding-recipient-title">Kepada Yth.</div>
@@ -298,7 +299,7 @@
 		</style>
 		
 	<section class="section6 mt-4" style="height: 100%;">
-		<div class="invitation-container moving-text from-left ">
+		<div class="invitation-container moving-text from-bottom ">
 			<div class="save-date">Save the Date</div>
 			
 			<button class="btn btn-calendar"  onclick="createCalendarEvent()">SAVE TO CALENDAR</button>
@@ -411,15 +412,15 @@
 						</div>
 						<div class="custom-col-4">
 							<div class="gallery-item">
-								<a href="photos/Photo-5.jpg" data-fancybox="gallery">
-									<img src="photos/Thumbnails/Photo-5.jpg" class="gallery-image">
+								<a href="photos/Photo-6.jpg" data-fancybox="gallery">
+									<img src="photos/Thumbnails/Photo-6.jpg" class="gallery-image">
 								</a>
 							</div>
 						</div>
 						<div class="custom-col-4">
 							<div class="gallery-item">
-								<a href="photos/Photo-6.jpg" data-fancybox="gallery">
-									<img src="photos/Thumbnails/Photo-6.jpg" class="gallery-image">
+								<a href="photos/Photo-5.jpg" data-fancybox="gallery">
+									<img src="photos/Thumbnails/Photo-5.jpg" class="gallery-image">
 								</a>
 							</div>
 						</div>
@@ -485,7 +486,7 @@
 			}
 		</style>
 		<section class="section7 pb-5" style="height: 100%;">
-			<div class="thank-you moving-text from-right" >
+			<div class="thank-you moving-text from-bottom" >
 				<div class="title">
 					Terimakasih  
 				</div>
@@ -584,8 +585,6 @@
 	</div>
 
 	<audio id="bgMusic" autoplay loop>
-		<!-- <source src="https://web.ts-invitation.com/wp-content/uploads/2023/10/y2mate.com-Banda-Neira-menampilkan-Gardika-Gigih-Sampai-Jadi-Debu-Live-mp3cut.net_.mp3"
-		type="audio/mp3"> -->
 		<source src="background-music.mp3"
 		type="audio/mp3">
     </audio>
