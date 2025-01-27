@@ -84,6 +84,7 @@ section {
     position: absolute;
     bottom: 0px;
     padding: 20px;
+    padding-top: 200px;
     background: linear-gradient(to top, #1a1a1a, transparent);
 }
 
