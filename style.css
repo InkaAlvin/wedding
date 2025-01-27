@@ -136,7 +136,7 @@ section {
     bottom: 0;
     z-index: 9999; /* Add high z-index to appear on top */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('photos/Photo-1.jpg') center/cover;
+    url('photos/1.jpg') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
