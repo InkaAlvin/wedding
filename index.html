@@ -52,7 +52,7 @@
 		<div class="wedding-guest-name"></div>
 		<button class="wedding-open-button" onclick="openInvitation()">Buka Undangan</button>
 	</div>
-	<div class="wedding-content" style="display: none">
+	<div class="wedding-content" >
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<div id="section1">
 			<section>
@@ -617,12 +617,13 @@
 			function openInvitation() {
 				document.querySelector('.wedding-container').style.opacity = '0';
 				setTimeout(() => {
-					document.body.style.overflow = 'auto'; // Enable scrolling
 					document.querySelector('.wedding-container').style.display = 'none';
-					document.querySelector('.wedding-content').style.display = 'block';
-
+					document.querySelector('.wedding-content').style.position = 'relative';
+					document.querySelector('.wedding-content').style.zIndex = '1';
+					document.body.style.overflow = 'auto';
+					
 					const audio = document.getElementById('bgMusic');
-					audio.play()
+					audio.play();
 				}, 1000);
 			}
 

@@ -71,7 +71,7 @@ body {
 .elementor-heading-title {
     font-size: 24px;
     letter-spacing: 5.4px;
-    font-family: "Aurelia", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Aurelia", Georgia, "Times New Roman", serif;  /* Similar-looking system fonts */
     color: #FFFFFF;
 }
 
@@ -125,12 +125,20 @@ section {
     text-transform: uppercase;
 }
 
+.wedding-content {
+    position: fixed;
+    z-index: -1;  /* Hide behind container */
+    width: 100%;
+}
+
 .wedding-container {
     opacity: 1;
     transition: opacity 1s ease-out;
     height: 100vh;
     overflow-y: auto;
     position: fixed;
+    z-index: 1;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
